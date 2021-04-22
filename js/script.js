@@ -1,6 +1,8 @@
 var app = new Vue({
     el: '#root',
     data: {
+        active: 0,
+        // Array Oggetti
         contacts: [
             {
                 name: 'Michele',
@@ -86,7 +88,12 @@ var app = new Vue({
                 ],
             },
         ]
+        // Fine Array Oggetti
+        
     },
     methods: {
-    }
+        chatActive(index) {
+            this.active = index;
+        },
+    },
 });
