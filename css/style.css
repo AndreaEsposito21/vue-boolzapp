@@ -23,8 +23,32 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
     /* Test */
     background-color: coral;
     height: 90%;
+}
+
+.inner-container {
+    display: flex;
+    height: 100%;
+    /* Test */
+    align-items: stretch;
+}
+
+.left-bar {
+    flex: 30%;
+    /* Test */
+    background-color: cornflowerblue;
+}
+
+.header-sider {
+    height: 60px;
+    /* Test */
+    background-color: crimson;
+}
+
+.right-bar {
+    flex: 70%;
+    /* Test */
+    background-color: burlywood;
 }
