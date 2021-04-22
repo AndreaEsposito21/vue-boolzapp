@@ -28,6 +28,11 @@ body {
     height: 90%;
 }
 
+ul {
+    list-style-type: none;
+}
+
+/* APP */
 .inner-container {
     display: flex;
     height: 100%;
@@ -35,20 +40,46 @@ body {
     align-items: stretch;
 }
 
+/* Side */
 .left-bar {
     flex: 30%;
     /* Test */
     background-color: cornflowerblue;
 }
-
+/* Left Bar Container */
 .header-sider {
     height: 60px;
     /* Test */
     background-color: crimson;
 }
 
+.bell-notifications {
+    height: 60px;
+        /* Test */
+    background-color: darkgreen;
+}
+
+.search-chat {
+    height: 50px;
+    /* Test */
+    background-color: salmon;
+}
+
+.chat-container {
+
+        /* Test */
+    background-color: greenyellow;
+    height: 358px;
+}
+/* End Left Bar Container */
+/* End Side */
+
+/* Main */
 .right-bar {
     flex: 70%;
     /* Test */
     background-color: burlywood;
 }
+/* Right Bar Container */
+/* End Right Bar Container */
+/* End Main */
