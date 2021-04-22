@@ -26,8 +26,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Test */
-    background-color: coral;
     height: 90%;
     align-self: center;
 }
@@ -48,8 +46,6 @@ ul {
 /* APP */
 .inner-container {
     height: 100%;
-    /* Test */
-    align-items: stretch;
 }
 
 .header-col {
@@ -209,9 +205,33 @@ ul {
 
 .inner-main-chat {
     width: 100%;
-    /* background-image: url("img/mine.jpg"); */
+    height: 100%;
+    background-image: url("../img/mine.jpg");
+    padding: 0 10%;
 }
 
+.chat-message li {
+    display: flex;
+    flex-direction: column;
+}
+
+.sent {
+    background-color: #d5f9ba;
+    align-self: flex-end;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    min-width: 30%;
+}
+
+.received {
+    background-color: white;
+    align-self: flex-start;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    min-width: 30%;
+}
 
 .user-text {
     background-color: #eaeaea;
