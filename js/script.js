@@ -2,6 +2,7 @@ var app = new Vue({
     el: '#root',
     data: {
         active: 0,
+        userSearch: '',
         userMessage: '',
         // Array Oggetti
         contacts: [
@@ -93,18 +94,38 @@ var app = new Vue({
         
     },
     methods: {
+        
         chatActive(index) {
             this.active = index;
         },
+
+        filterSearch() {
+            this.contacts.forEach(element => {
+                if (element.name.toLowerCase().includes(this.userSearch.toLowerCase())) {
+                    element.visible = true;
+                } else {
+                    element.visible = false;
+                }
+            });
+        },
+
         chatMessage(active) {
             if (this.userMessage.length > 0) {
                 this.contacts[active].messages.push({
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: this.userMessage,
                     status: 'sent'
                 });
                 this.userMessage = '';
             }
-            console.log(this.contacts[active].messages);
+        },
+        // Test
+        chatMessageReply() {
+            this.contacts[active].messages.push({
+                date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                text: 'ok',
+                status: 'received'
+            });
         },
     },
 });

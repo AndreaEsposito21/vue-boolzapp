@@ -73,7 +73,7 @@
                             <div class="search-chat">
                                 <div class="inner-search-chat flex">
                                     <button><i class="fas fa-search"></i></button>
-                                    <input type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+                                    <input type="text" v-model="userSearch" @keyup="filterSearch" name="search" placeholder="Cerca o inizia una nuova chat">
                                 </div>
                             </div>
                             <!-- End Search Chat -->
@@ -82,7 +82,7 @@
                             <div class="chat-container">
                                 <div class="inner-chat">
                                     <ul class="chat-list">
-                                        <li v-for="(contact, index) in contacts" @click="chatActive(index)">
+                                        <li v-for="(contact, index) in contacts" @click="chatActive(index)" v-if="contact.visible">
                                             <div class="avatar-contact">
                                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                                                 <span class="text-body">{{ contact.name }}</span>
@@ -109,7 +109,7 @@
 
                                 <div class="header-col-name">
                                     <div class="user-text-name">{{contacts[active].name}}</div>
-                                    <div class="last-access">Ultimo accesso oggi alle</div>
+                                    <div class="last-access">Ultimo accesso oggi alle {{contacts[active].messages[active].date}}</div>
                                 </div>
 
                                 <div class="header-col-icons">
@@ -131,11 +131,13 @@
                             <!-- App Main -->
                             <main class="main-chat">
                                 <div class="inner-main-chat">
-                                    <ul class="chat-message">
-                                        <li v-for="message in contacts[active].messages">
-                                            <div :class="message.status">{{message.text}}</div>
-                                        </li>
-                                    </ul>
+                                    <div class="chat-message" :class="message.status" v-for="message in contacts[active].messages">
+
+                                        <div class="message-text">{{message.text}}</div>
+
+                                        <div class="date">{{message.date}}</div>
+
+                                    </div>
                                 </div>
                             </main>
                             <!-- End App Main -->

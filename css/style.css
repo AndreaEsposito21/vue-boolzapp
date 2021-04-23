@@ -155,12 +155,17 @@ ul {
 .chat-container {
     background-color: white;
     flex-grow: 1;
+    overflow-y: auto;
 }
 
 .chat-list li {
     padding: 12px;
     border-bottom: 1px solid #e9ebea;
     cursor: pointer;
+}
+
+.chat-list li:hover {
+    background-color: lightgrey;
 }
 
 .avatar-contact {
@@ -199,6 +204,7 @@ ul {
 
 .main-chat {
     flex-grow: 1;
+    overflow-y: auto;
 }
 
 .inner-main-chat {
@@ -208,27 +214,32 @@ ul {
     padding: 0 10%;
 }
 
-.chat-message li {
-    display: flex;
-    flex-direction: column;
+.chat-message {
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    min-width: 300px;
+    max-width: 400px;
+    clear: both;
+    position: relative;
 }
 
-.sent {
+.date {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 12px;
+    color: #b6b9bc;
+}
+
+.chat-message.sent {
     background-color: #d5f9ba;
-    align-self: flex-end;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 10px;
-    min-width: 30%;
+    float: right;
 }
 
-.received {
+.chat-message.received {
     background-color: white;
-    align-self: flex-start;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 10px;
-    min-width: 30%;
+    float: left;
 }
 
 .user-text {
