@@ -96,14 +96,15 @@ var app = new Vue({
         chatActive(index) {
             this.active = index;
         },
-        chatMessage() {
+        chatMessage(active) {
             if (this.userMessage.length > 0) {
-                this.messages.push({
+                this.contacts[active].messages.push({
                     text: this.userMessage,
                     status: 'sent'
                 });
                 this.userMessage = '';
             }
+            console.log(this.contacts[active].messages);
         },
     },
 });

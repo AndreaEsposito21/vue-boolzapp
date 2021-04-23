@@ -21,7 +21,6 @@ body {
 
 .container {
     width: 80%;
-    margin: auto;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -199,7 +198,6 @@ ul {
 }
 
 .main-chat {
-    /* flex: 80%; */
     flex-grow: 1;
 }
 
