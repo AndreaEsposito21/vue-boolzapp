@@ -2,6 +2,7 @@ var app = new Vue({
     el: '#root',
     data: {
         active: 0,
+        userMessage: '',
         // Array Oggetti
         contacts: [
             {
@@ -94,6 +95,15 @@ var app = new Vue({
     methods: {
         chatActive(index) {
             this.active = index;
+        },
+        chatMessage() {
+            if (this.userMessage.length > 0) {
+                this.messages.push({
+                    text: this.userMessage,
+                    status: 'sent'
+                });
+                this.userMessage = '';
+            }
         },
     },
 });
