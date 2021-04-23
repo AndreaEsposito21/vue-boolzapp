@@ -117,15 +117,15 @@ var app = new Vue({
                     status: 'sent'
                 });
                 this.userMessage = '';
+
+                setTimeout(() => {
+                    this.contacts[active].messages.push({
+                        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                        text: 'Ok',
+                        status: 'received'
+                    });
+                }, 1000);
             }
-        },
-        // Test
-        chatMessageReply() {
-            this.contacts[active].messages.push({
-                date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-                text: 'ok',
-                status: 'received'
-            });
         },
     },
 });
