@@ -110,8 +110,11 @@ var app = new Vue({
         },
 
         chatMessage(active) {
+
+            const sendMessage = this.contacts[active].messages;
+
             if (this.userMessage.length > 0) {
-                this.contacts[active].messages.push({
+                sendMessage.push({
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: this.userMessage,
                     status: 'sent'
@@ -119,7 +122,7 @@ var app = new Vue({
                 this.userMessage = '';
 
                 setTimeout(() => {
-                    this.contacts[active].messages.push({
+                    sendMessage.push({
                         date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                         text: 'Ok',
                         status: 'received'
