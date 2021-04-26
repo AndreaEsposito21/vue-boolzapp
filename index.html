@@ -109,7 +109,9 @@
 
                                 <div class="header-col-name">
                                     <div class="user-text-name">{{contacts[active].name}}</div>
-                                    <div class="last-access">Ultimo accesso oggi alle {{contacts[active].messages[active].date}}</div>
+                                    <div class="last-access">
+                                        Ultimo accesso oggi alle {{contacts[active].messages[contacts[active].messages.length - 1].date}}
+                                    </div>
                                 </div>
 
                                 <div class="header-col-icons">

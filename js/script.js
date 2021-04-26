@@ -88,7 +88,7 @@ var app = new Vue({
                         status: 'received'
                     }
                 ],
-            },
+            }
         ]
         // Fine Array Oggetti
         
