@@ -133,11 +133,23 @@
                             <!-- App Main -->
                             <main class="main-chat">
                                 <div class="inner-main-chat">
-                                    <div class="chat-message" :class="message.status" v-for="message in contacts[active].messages">
+                                    <div 
+                                        class="chat-message" 
+                                        :class="message.status" 
+                                        v-for="(message, index) in contacts[active].messages">
 
                                         <div class="message-text">{{message.text}}</div>
 
                                         <div class="date">{{message.date}}</div>
+
+                                        <div class="chevron" @click="optionDropdown(index)"><i class="fas fa-chevron-down"></i></div>
+
+                                        <div v-if=" index === activeMessage" class="option-list">
+                                            <ul>
+                                                <li>Info messaggio</li>
+                                                <li @click="deleteMessage(index)">Cancella messaggio</li>
+                                            </ul>
+                                        </div>
 
                                     </div>
                                 </div>

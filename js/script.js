@@ -4,6 +4,7 @@ var app = new Vue({
         active: 0,
         userSearch: '',
         userMessage: '',
+        activeMessage: false,
         // Array Oggetti
         contacts: [
             {
@@ -97,6 +98,7 @@ var app = new Vue({
         
         chatActive(index) {
             this.active = index;
+            this.activeMessage = false;
         },
 
         filterSearch() {
@@ -130,5 +132,18 @@ var app = new Vue({
                 }, 1000);
             }
         },
+
+        optionDropdown(msgIndex) {
+            if (this.activeMessage === msgIndex) {
+                this.activeMessage = false;
+            } else {
+                this.activeMessage = msgIndex;
+            }
+        },
+
+        deleteMessage(msgIndex) {
+            this.contacts[this.active].messages.splice(msgIndex, 1);
+            this.activeMessage = false;
+        }
     },
 });
